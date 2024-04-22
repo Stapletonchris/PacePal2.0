@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PacePal" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/PacePal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/PacePal" vcs="Git" />
   </component>
 </project>
