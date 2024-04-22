@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityJ">
 
+    <!--Handles the basic layout of the main page. Positioning etc...-->
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
