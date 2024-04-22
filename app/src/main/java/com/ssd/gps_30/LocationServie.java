@@ -8,6 +8,13 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
+//import android.content.Context;
+//import android.app.Activity;
+//
+//import android.Manifest;
+//import android.content.pm.PackageManager;
+
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -20,8 +27,15 @@ import com.google.android.gms.location.LocationServices;
 
 public class LocationServie extends Service {
 
+    //Location Request String
+    public static final String ACTION_REQUEST_PERMISSIONS = "com.ssd.gps_30.REQUEST_PERMISSIONS";
+
+    //Constants
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
+    //private Context context;
 
     @Nullable
     @Override
@@ -29,15 +43,18 @@ public class LocationServie extends Service {
         return null;
     }
 
+    // Background actions that take place before onCreate()
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         requestLocation();
         return super.onStartCommand(intent, flags, startId);
     }
 
+    //On create works line a main function is kt
     @Override
     public void onCreate() {
         super.onCreate();
+        //context = getApplicationContext();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         locationCallback = new LocationCallback() {
             @Override
@@ -54,19 +71,19 @@ public class LocationServie extends Service {
 
 
     }
-
+    // request location from the user
     private void requestLocation() {
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setInterval(5 * 1000);
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+
+        // Check if the app has location permission
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+            // Send broadcast to request permissions
+            Intent permissionIntent = new Intent(ACTION_REQUEST_PERMISSIONS);
+            // This method will result in a callback to onRequestPermissionsResult() in the calling Activity
+            // Handle the result there to start location updates if permission is granted
+            //ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
             return;
         }
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());

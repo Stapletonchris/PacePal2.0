@@ -1,4 +1,4 @@
-package com.ssd.gps_30
+
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

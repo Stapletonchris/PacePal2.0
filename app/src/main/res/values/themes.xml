@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.GPS30" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Base application theme using AppCompat -->
+    <style name="Theme.GPS30" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
 </resources>
