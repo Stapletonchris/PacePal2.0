@@ -63,8 +63,10 @@ dependencies {
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("com.android.support.constraint:constraint-layout:2.0.4")
     implementation ("androidx.appcompat:appcompat:1.3.0")
+    implementation ("androidx.fragment:fragment:1.6.2")
 
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
