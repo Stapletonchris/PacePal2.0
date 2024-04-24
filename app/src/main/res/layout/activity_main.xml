@@ -21,6 +21,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/speedTextView" />
 
+    <!-- Add View Run History Button below the Pace TextView -->
+    <Button
+        android:id="@+id/viewRunHistoryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Run History"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paceTextView" />
+
+
     <TextView
         android:id="@+id/speedTextView"
         android:layout_width="wrap_content"
