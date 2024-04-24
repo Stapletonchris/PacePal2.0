@@ -1,3 +1,12 @@
+/*
+Resources for making this:
+
+Android Developer Docs: https://developer.android.com/health-and-fitness/guides/basic-fitness-app/read-step-count-data
+Project Gurukul: https://projectgurukul.org/android-kotlin-step-counter-app/
+StepCounterDemo Repository: https://github.com/dev-mgkaung/StepCounterDemo
+
+*/
+
 package com.ssd.gps_30;
 
 // Required imports for sensor and other functionalities
