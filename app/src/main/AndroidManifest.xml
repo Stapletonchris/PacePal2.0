@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<!--    package="com.ssd.gps_30"-->
+    <!--    package="com.ssd.gps_30"-->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:ignore="CoarseFineLocation" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Added for completeness -->
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Permissions for sensors -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/> <!-- Required for step counter on Android 10 and above -->
+
+    <!-- Features for sensors, especially for devices that have them -->
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false"/> <!-- Ensure this is not required for device compatibility -->
 
     <application
         android:allowBackup="true"
@@ -40,6 +47,12 @@
             </intent-filter>
         </receiver>
 
-
     </application>
 </manifest>
+
+
+
+
+
+
+
