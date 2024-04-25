@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityJ">
 
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PacePal"
+        android:textSize="50sp"
+    android:textColor="@android:color/black"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="16dp" />
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
@@ -16,7 +28,7 @@
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/stepsTextView" />
 
     <TextView
         android:id="@+id/speedTextView"
@@ -25,10 +37,9 @@
         android:text="Speed: 0 km/h"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/startButton"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     <TextView
         android:id="@+id/paceTextView"
@@ -41,7 +52,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- TextView for "Steps" -->
     <TextView
         android:id="@+id/stepsTextView"
         android:layout_width="wrap_content"
@@ -53,8 +63,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Button for "View Run History" -->
     <Button
         android:id="@+id/viewRunHistoryButton"
         android:layout_width="0dp"
@@ -65,9 +73,9 @@
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stepsTextView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp" />
 
-    <!-- FrameLayout for future fragments or UI components -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -83,78 +91,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".MainActivityJ">-->
-
-<!--    <Button-->
-<!--        android:id="@+id/startButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Start Tracking"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textColor="@android:color/white"-->
-<!--        android:backgroundTint="@color/colorPrimary"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/speedTextView" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/speedTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Speed: 0 km/h"-->
-<!--        android:textSize="24sp"-->
-<!--        android:textColor="@android:color/black"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/startButton"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/paceTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Pace: 0 min/km"-->
-<!--        android:textSize="24sp"-->
-<!--        android:textColor="@android:color/black"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/speedTextView"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/viewRunHistoryButton"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="View Run History"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textColor="@android:color/white"-->
-<!--        android:backgroundTint="@color/colorPrimary"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/paceTextView" />-->
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/fragment_container"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-<!--        &lt;!&ndash; Other UI components for MainActivity &ndash;&gt;-->
-<!--    </FrameLayout>-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
