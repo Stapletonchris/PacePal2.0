@@ -28,6 +28,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -88,6 +91,19 @@ public class MainActivityJ extends AppCompatActivity implements SensorEventListe
             @Override
             public void onClick(View v) {
                 toggleTrackingButton();
+            }
+        });
+
+        // Allows you to view run history
+        viewRunHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the "View Run History" button click
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.fragment_container, new RunHistoryFragment());
+                transaction.addToBackStack(null); // Optional: Adds the transaction to the back stack
+                transaction.commit();
             }
         });
 

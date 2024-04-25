@@ -34,5 +34,11 @@ public class RunHistoryFragment extends Fragment {
 
         return view;
     }
+
+    public void returnToMain(View view) {
+        if (getFragmentManager() != null) {
+            getFragmentManager().popBackStack();
+        }
+    }
 }
 
