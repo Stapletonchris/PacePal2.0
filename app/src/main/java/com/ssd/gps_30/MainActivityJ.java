@@ -126,7 +126,7 @@ public class MainActivityJ extends AppCompatActivity implements SensorEventListe
             lastMagnitude = magnitude;
 
             // 4. Classification: Determine if the change in magnitude is significant enough to count as a step
-            if (magnitudeDelta > 4) {
+            if (magnitudeDelta > 3) {
                 stepCount++;
                 // Update the UI with the new step count
                 runOnUiThread(new Runnable() {
