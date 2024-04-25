@@ -258,11 +258,6 @@ public class MainActivityJ extends AppCompatActivity implements SensorEventListe
 
 
 
-
-
-
-
-
 //package com.ssd.gps_30;
 //
 //import android.Manifest;
